@@ -29,7 +29,7 @@
     <ClInclude Include="src\Engine\Window.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="src\Client\Inter.hpp">
+    <ClInclude Include="src\Client\Interface.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
