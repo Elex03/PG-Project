@@ -1,10 +1,17 @@
-#include <stdio.h>
-#include "Window.h"
-#include "Interface.h"
+#include "window.h"
 
-int main(int argc, char** argv) {
-	InterfaceGL interface;
-	interface.Run();
-	
-	return 0;
+int main() {
+    // Inicializar ventana
+    Window window(800, 600, "Mi Ventana GLFW");
+
+    // Bucle principal
+    while (!glfwWindowShouldClose(window.getWindow())) {
+        // Procesar eventos
+        glfwPollEvents();
+
+        // Renderizar
+        // Aquí pondrías tu código de renderizado
+    }
+
+    return 0;
 }
