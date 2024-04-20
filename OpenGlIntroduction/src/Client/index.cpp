@@ -22,7 +22,7 @@ int main(void)
 	std::vector<unsigned int> buffers(Longitud_Array);
 
 	// Establecer la función de devolución de llamada para la posición del cursor
-	//glfwSetCursorPosCallback(window.getWindow(), cursor_position_callback);
+	glfwSetCursorPosCallback(window.getWindow(), cursor_position_callback);
 
 	glGenBuffers((Longitud_Array / 2), buffers.data());
 
