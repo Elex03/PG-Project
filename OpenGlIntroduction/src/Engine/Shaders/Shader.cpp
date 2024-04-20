@@ -23,19 +23,6 @@ static std::string putColor(std::string color) {
 	return fragmentShader;
 }
 
-Shader::Shader(std::string fragmentShader)
-{
-	unsigned int vs = CompileShader(GL_VERTEX_SHADER, vertexShader);
-	unsigned int fs = CompileShader(GL_FRAGMENT_SHADER, putColor(fragmentShader));
-
-	glAttachShader(program, vs);
-	glAttachShader(program, fs);
-	glLinkProgram(program); /*Realizando la union*/
-	glValidateProgram(program); /*Validando el resultado final*/
-
-	glDeleteShader(vs);
-	glDeleteShader(fs);
-}
 
 void Shader::ChangeColor(std::string fragmentShader)
 {

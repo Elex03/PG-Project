@@ -6,8 +6,6 @@
 
 class Shader {
 public:
-    Shader(std::string fragmentShader);
-    
     unsigned int getprogram() const { return program; };
     static unsigned int CompileShader(unsigned int type, const std::string& source);
     void ChangeColor(std::string fragmentShader);
