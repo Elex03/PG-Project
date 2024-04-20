@@ -12,7 +12,7 @@ void cursor_position_callback(GLFWwindow* window, double xpos, double ypos) {
 	double x_normalized = (2.0 * xpos) / width - 1.0;
 	double y_normalized = 1.0 - (2.0 * ypos) / height;
 
-	std::cout << "Posición del mouse en OpenGL: (" << x_normalized << ", " << y_normalized << ")" << std::endl;
+	std::cout << "Coordenadas en openGl: (" << x_normalized << ", " << y_normalized << ")" << std::endl;
 }
 
 int main(void)
@@ -23,17 +23,18 @@ int main(void)
 
 	// Establecer la función de devolución de llamada para la posición del cursor
 	glfwSetCursorPosCallback(window.getWindow(), cursor_position_callback);
+glGenBuffers((Longitud_Array / 2), buffers.data());
 
-	glGenBuffers((Longitud_Array / 2), buffers.data());
-
+	
 	while (!glfwWindowShouldClose(window.getWindow())) {
 
 		glClear(GL_COLOR_BUFFER_BIT);
+		glClearColor(0.145, 0.157, 0.314, 1);
+		
 
 		for (int i = 1, j = 0; i < Longitud_Array && !glfwWindowShouldClose(window.getWindow()); i += 2, j++)
 		{
-			Shader Shader;
-			Shader.ChangeColor(Colors[j]);
+			Shader Shader(Colors[j]);
 			glUseProgram(Shader.getprogram());
 			glBindBuffer(GL_ARRAY_BUFFER, buffers[j]);
 			glBufferData(GL_ARRAY_BUFFER, positions[(i - 1)][0] * sizeof(float), positions[i], GL_STATIC_DRAW);

@@ -24,7 +24,7 @@ static std::string putColor(std::string color) {
 }
 
 
-void Shader::ChangeColor(std::string fragmentShader)
+ Shader::Shader(std::string fragmentShader)
 {
 	unsigned int vs = CompileShader(GL_VERTEX_SHADER, vertexShader);
 	unsigned int fs = CompileShader(GL_FRAGMENT_SHADER, putColor(fragmentShader));
