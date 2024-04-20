@@ -147,6 +147,7 @@
     <ClCompile Include="src\Engine\Window\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Client\Arrays.h" />
     <ClInclude Include="src\Engine\Shaders\Shader.h" />
     <ClInclude Include="src\Engine\Window\Window.h" />
   </ItemGroup>
