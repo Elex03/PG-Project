@@ -18,12 +18,12 @@
     <ClCompile Include="src\Client\index.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="src\Engine\Window.cpp">
+    <ClCompile Include="src\Engine\Window\Window.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Engine\Window.h">
+    <ClInclude Include="src\Engine\Window\Window.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>

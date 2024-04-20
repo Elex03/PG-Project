@@ -113,7 +113,7 @@
       <PreprocessorDefinitions>GLEW_STATIC;WIN32;</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)dependencies\include\;$(SolutionDir)$(ProjectName);$(SolutionDir)$(ProjectName)\src\Engine\;$(SolutionDir)$(ProjectName)\src\Client\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)dependencies\include\;$(SolutionDir)$(ProjectName);$(SolutionDir)$(ProjectName)\src\Engine\Window\;$(SolutionDir)$(ProjectName)\src\Client\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -130,7 +130,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>GLEW_STATIC;WIN32;</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)dependencies\include\;$(SolutionDir)$(ProjectName);$(SolutionDir)$(ProjectName)\src\Engine\;$(SolutionDir)$(ProjectName)\src\Client\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)dependencies\include\;$(SolutionDir)$(ProjectName);$(SolutionDir)$(ProjectName)\src\Engine\Window\;$(SolutionDir)$(ProjectName)\src\Client\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -143,10 +143,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\Client\index.cpp" />
-    <ClCompile Include="src\Engine\Window.cpp" />
+    <ClCompile Include="src\Engine\Window\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Engine\Window.h" />
+    <ClInclude Include="src\Engine\Window\Window.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
