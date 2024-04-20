@@ -1,21 +1,20 @@
 #include <Window.h>
+#include <Shader.h>
 
-std::string shaders(std:: string color) {
-	std::string fragmentShader =
-		"#version 330 core\n"
-		"\n"
-		"layout(location = 0) out vec4 color;\n"
-		"\n"
-		"void main()\n"
-		"{\n"
-		" color = vec4("+color+");\n"/*Establecimiento del color*/
-		"}\n";
-	return fragmentShader;
+
+void cursor_position_callback(GLFWwindow* window, double xpos, double ypos) {
+	int width, height;
+	glfwGetWindowSize(window, &width, &height);
+
+	double x_normalized = (2.0 * xpos) / width - 1.0;
+	double y_normalized = 1.0 - (2.0 * ypos) / height;
+
+	std::cout << "Posición del mouse en OpenGL: (" << x_normalized << ", " << y_normalized << ")" << std::endl;
 }
+
 int main(void)
 {
 	Window window(800, 600, "Mi Ventana GLFW");
-
 
 	float positions[] = {
 		 0.0f, 0.9f,
@@ -36,18 +35,13 @@ int main(void)
 	glEnableVertexAttribArray(0);
 	glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(float) * 2, 0);
 
-	std::string vertexShader =
-		"#version 330 core\n"
-		"\n"
-		"layout(location = 0) in vec4 position;\n"
-		"\n"
-		"void main()\n"
-		"{\n"
-		" gl_Position = position;\n"
-		"}\n";
 
-	unsigned int shader = window.CreateShader(vertexShader, shaders("0.494,0.518,0.969, 0"));
-	glUseProgram(shader);
+
+	Shader Shader("0.494,0.518,0.969, 0");
+	glUseProgram(Shader.getprogram());
+
+	// Establecer la función de devolución de llamada para la posición del cursor
+	glfwSetCursorPosCallback(window.getWindow(), cursor_position_callback);
 
 	while (!glfwWindowShouldClose(window.getWindow())) {
 
