@@ -1,2 +1,2 @@
-# Graphic Pogramation
+# Graphic Pogramming
 
