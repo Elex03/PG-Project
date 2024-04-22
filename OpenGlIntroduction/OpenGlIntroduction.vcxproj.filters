@@ -24,6 +24,12 @@
     <ClCompile Include="src\Engine\Shaders\Shader.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="src\Client\Exp1_Ejemplos\E1_Proyeccion.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Client\Exp1_Ejemplos\E2_Proyeccion.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Engine\Window\Window.h">

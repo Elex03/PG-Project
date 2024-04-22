@@ -21,16 +21,16 @@ int main(void)
 	int Longitud_Array = sizeof(positions) / sizeof(*positions);
 	std::vector<unsigned int> buffers(Longitud_Array);
 
-	// Establecer la función de devolución de llamada para la posición del cursor
+	// Establecer la funci?n de devoluci?n de llamada para la posici?n del cursor
 	glfwSetCursorPosCallback(window.getWindow(), cursor_position_callback);
-glGenBuffers((Longitud_Array / 2), buffers.data());
+	glGenBuffers((Longitud_Array / 2), buffers.data());
 
-	
+
 	while (!glfwWindowShouldClose(window.getWindow())) {
 
 		glClear(GL_COLOR_BUFFER_BIT);
 		glClearColor(0.145, 0.157, 0.314, 1);
-		
+
 
 		for (int i = 1, j = 0; i < Longitud_Array && !glfwWindowShouldClose(window.getWindow()); i += 2, j++)
 		{
