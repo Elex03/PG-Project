@@ -27,11 +27,11 @@ int main(void)
 
 	bool estado = true;
 	while (!glfwWindowShouldClose(window.getWindow())) {
+		glClearColor(0.145, 0.157, 0.314, 1);
 
-		glClear(GL_COLOR_BUFFER_BIT);
 		while (estado)
 		{
-			glClearColor(0.145, 0.157, 0.314, 1);
+			glClear(GL_COLOR_BUFFER_BIT);
 			for (int i = 1, j = 0; i < Longitud_Array && !glfwWindowShouldClose(window.getWindow()); i += 2, j++)
 			{
 				Shader Shader(Colors[j]);
