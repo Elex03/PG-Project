@@ -32,7 +32,7 @@ public:
 
         // camera orbits in the y=10 plane
         // and looks at origin
-        double rad = M_PI / 180.0f * t;
+        double rad = M_PI / 90.0f * t;
         gluLookAt(10.0 * cos(rad), 10.0, 10.0 * sin(rad), // eye
             0.0, 0.0, 0.0, // look at
             0.0, 1.0, 0.0); // up
