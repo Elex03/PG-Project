@@ -4,6 +4,9 @@ int arrayExample[][6] = {
 	{},
 	{256, 120, 300, 150, 600, 200}
 };
+float simpleTriangle[6] = {
+	0.0f, 0.5f, 0.5f, 0.0f, -0.5f, 0.0f
+};
 float positions[][60] = {
 	{52},
 	{

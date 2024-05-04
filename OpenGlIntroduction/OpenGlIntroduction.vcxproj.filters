@@ -33,6 +33,9 @@
     <ClCompile Include="src\Client\Exp1_Ejemplos\E1_Proyeccion_Ortografia.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="src\Engine\Functions.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Engine\Window\Window.h">
