@@ -145,6 +145,7 @@
     <ClCompile Include="src\Client\Exp1_Ejemplos\E1_Proyeccion.cpp" />
     <ClCompile Include="src\Client\Exp1_Ejemplos\E1_Proyeccion_Ortografia.cpp" />
     <ClCompile Include="src\Client\Exp1_Ejemplos\E2_Proyeccion.cpp" />
+    <ClCompile Include="src\Client\glad.cpp" />
     <ClCompile Include="src\Client\index.cpp" />
     <ClCompile Include="src\Engine\Functions.cpp" />
     <ClCompile Include="src\Engine\Shaders\Shader.cpp" />

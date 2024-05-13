@@ -11,8 +11,6 @@ Window::Window(int width, int height, const char* title) {
 
     glfwMakeContextCurrent(m_window);
 
-    if (glewInit() != GLEW_OK)
-        std::cout << "Error!" << std::endl;
 
     std::cout << glGetString(GL_VERSION) << std::endl;
 
