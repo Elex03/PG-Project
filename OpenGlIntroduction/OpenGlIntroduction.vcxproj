@@ -142,6 +142,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="EBO.cpp" />
+    <ClCompile Include="ShaderClass.cpp" />
     <ClCompile Include="src\Client\Exp1_Ejemplos\E1_Proyeccion.cpp" />
     <ClCompile Include="src\Client\Exp1_Ejemplos\E1_Proyeccion_Ortografia.cpp" />
     <ClCompile Include="src\Client\Exp1_Ejemplos\E2_Proyeccion.cpp" />
@@ -150,11 +152,34 @@
     <ClCompile Include="src\Engine\Functions.cpp" />
     <ClCompile Include="src\Engine\Shaders\Shader.cpp" />
     <ClCompile Include="src\Engine\Window\Window.cpp" />
+    <ClCompile Include="stb.cpp" />
+    <ClCompile Include="Texture.cpp" />
+    <ClCompile Include="VAO.cpp" />
+    <ClCompile Include="VBO.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="EBO.h" />
+    <ClInclude Include="ShaderClass.h" />
     <ClInclude Include="src\Client\Arrays.h" />
     <ClInclude Include="src\Engine\Shaders\Shader.h" />
     <ClInclude Include="src\Engine\Window\Window.h" />
+    <ClInclude Include="Texture.h" />
+    <ClInclude Include="VAO.h" />
+    <ClInclude Include="VBO.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="default.frag" />
+    <None Include="default.vert" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="1.png" />
+    <Image Include="box.jpg" />
+    <Image Include="Dog.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="images.jpg" />
+    <Image Include="Johan.png" />
+    <Image Include="pngegg.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
