@@ -6,6 +6,8 @@
 #include"VAO.h"
 #include"VBO.h"
 #include"EBO.h"
+
+
 //Coordenadas de Vertices
 GLfloat vertices[] =
 {
