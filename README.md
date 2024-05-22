@@ -1,1 +1,1 @@
-# PG-Project
+# End of course project
