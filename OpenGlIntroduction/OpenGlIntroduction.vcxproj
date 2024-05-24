@@ -24,6 +24,7 @@
     <ProjectGuid>{35fd2e29-c5c5-423c-9884-e98853eb728e}</ProjectGuid>
     <RootNamespace>OpenGlIntroduction</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>PG-Proyect</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -113,7 +114,7 @@
       <PreprocessorDefinitions>GLEW_STATIC;WIN32;</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)dependencies\include\;$(SolutionDir)$(ProjectName);$(SolutionDir)$(ProjectName)\src\Engine\Window\;$(SolutionDir)$(ProjectName)\src\Client\;$(SolutionDir)$(ProjectName)\src\Engine\Shaders;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)dependencies\include\;$(SolutionDir)$(ProjectName)\src\Engine\Window\;$(SolutionDir)$(ProjectName)\src\Client\;C:\Users\Win10User\source\repos\PG-Proyect\OpenGlIntroduction\src\Engine\libraries;$(SolutionDir)$(ProjectName)\src\Engine\resources\Textures;$(SolutionDir)$(ProjectName);C:\Users\Win10User\source\repos\PG-Proyect\OpenGlIntroduction\src\Engine\resources\Shaders;C:\Users\Win10User\source\repos\PG-Proyect\OpenGlIntroduction\src\Engine\headers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -130,7 +131,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>GLEW_STATIC;WIN32;</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)dependencies\include\;$(SolutionDir)$(ProjectName);$(SolutionDir)$(ProjectName)\src\Engine\Window\;$(SolutionDir)$(ProjectName)\src\Client\;$(SolutionDir)$(ProjectName)\src\Engine\Shaders;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)dependencies\include\;$(SolutionDir)$(ProjectName)\src\Engine\Window\;$(SolutionDir)$(ProjectName)\src\Client\;C:\Users\Win10User\source\repos\PG-Proyect\OpenGlIntroduction\src\Engine\libraries;$(SolutionDir)$(ProjectName)\src\Engine\resources\Textures;$(SolutionDir)$(ProjectName);C:\Users\Win10User\source\repos\PG-Proyect\OpenGlIntroduction\src\Engine\resources\Shaders;C:\Users\Win10User\source\repos\PG-Proyect\OpenGlIntroduction\src\Engine\headers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -142,47 +143,36 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Camera.cpp" />
-    <ClCompile Include="EBO.cpp" />
-    <ClCompile Include="Main.cpp" />
-    <ClCompile Include="ShaderClass.cpp" />
-    <ClCompile Include="src\Client\Exp1_Ejemplos\E1_Proyeccion.cpp" />
-    <ClCompile Include="src\Client\Exp1_Ejemplos\E1_Proyeccion_Ortografia.cpp" />
-    <ClCompile Include="src\Client\Exp1_Ejemplos\E2_Proyeccion.cpp" />
-    <ClCompile Include="src\Client\glad.cpp" />
-    <ClCompile Include="src\Engine\Functions.cpp" />
-    <ClCompile Include="src\Engine\Shaders\Shader.cpp" />
+    <ClCompile Include="src\Client\Main.cpp" />
+    <ClCompile Include="src\Engine\libraries\Camera.cpp" />
+    <ClCompile Include="src\Engine\libraries\EBO.cpp" />
+    <ClCompile Include="src\Engine\libraries\Functions.cpp" />
+    <ClCompile Include="src\Engine\libraries\glad.cpp" />
+    <ClCompile Include="src\Engine\libraries\shaderClass.cpp" />
+    <ClCompile Include="src\Engine\libraries\stb.cpp" />
+    <ClCompile Include="src\Engine\libraries\Texture.cpp" />
+    <ClCompile Include="src\Engine\libraries\VAO.cpp" />
+    <ClCompile Include="src\Engine\libraries\VBO.cpp" />
     <ClCompile Include="src\Engine\Window\Window.cpp" />
-    <ClCompile Include="stb.cpp" />
-    <ClCompile Include="Texture.cpp" />
-    <ClCompile Include="VAO.cpp" />
-    <ClCompile Include="VBO.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Camera.h" />
-    <ClInclude Include="EBO.h" />
-    <ClInclude Include="ShaderClass.h" />
-    <ClInclude Include="src\Client\Arrays.h" />
+    <ClInclude Include="src\Engine\headers\Camera.h" />
+    <ClInclude Include="src\Engine\headers\EBO.h" />
+    <ClInclude Include="src\Engine\headers\shaderClass.h" />
+    <ClInclude Include="src\Engine\headers\Texture.h" />
+    <ClInclude Include="src\Engine\headers\VAO.h" />
+    <ClInclude Include="src\Engine\headers\VBO.h" />
     <ClInclude Include="src\Engine\Shaders\Shader.h" />
     <ClInclude Include="src\Engine\Window\Window.h" />
-    <ClInclude Include="Texture.h" />
-    <ClInclude Include="VAO.h" />
-    <ClInclude Include="VBO.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="default.frag" />
     <None Include="default.vert" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="1.png" />
-    <Image Include="box.jpg" />
-    <Image Include="Dog.png">
-      <DeploymentContent>true</DeploymentContent>
-    </Image>
-    <Image Include="dymond.png" />
-    <Image Include="images.jpg" />
-    <Image Include="Johan.png" />
-    <Image Include="pngegg.png" />
+    <Image Include="src\Engine\resources\Textures\box.jpg" />
+    <Image Include="src\Engine\resources\Textures\Dog.png" />
+    <Image Include="src\Engine\resources\Textures\dymond.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -11,30 +11,45 @@
 #include"VAO.h"
 #include"VBO.h"
 #include"EBO.h"
-#include"Camara.h"
+#include"Camera.h"
 
 
 const unsigned int width = 800;
 const unsigned int height = 800;
 //Coordenadas de Vertices
-GLfloat vertices[] =
-{
-    // COORDENADAS COLORES COORDENADAS PARA LA TEXTURE
-    -0.5f, 0.0f,  0.5f,     0.83f, 0.70f, 0.44f,	0.0f, 0.0f,
-    -0.5f, 0.0f, -0.5f,     0.83f, 0.70f, 0.44f,	5.0f, 0.0f,
-     0.5f, 0.0f, -0.5f,     0.83f, 0.70f, 0.44f,	0.0f, 0.0f,
-     0.5f, 0.0f,  0.5f,     0.83f, 0.70f, 0.44f,	5.0f, 0.0f,
-     0.0f, 0.8f,  0.0f,     0.92f, 0.86f, 0.76f,	2.5f, 5.0f
+GLfloat vertices[] = {
+    // Coordenadas       // Colores          // Coordenadas de Textura
+    // Cara frontal
+    -0.5f, -0.5f,  0.5f,  0.83f, 0.70f, 0.44f,  0.0f, 0.0f,
+     0.5f, -0.5f,  0.5f,  0.83f, 0.70f, 0.44f,  1.0f, 0.0f,
+     0.5f,  0.5f,  0.5f,  0.83f, 0.70f, 0.44f,  1.0f, 1.0f,
+    -0.5f,  0.5f,  0.5f,  0.83f, 0.70f, 0.44f,  0.0f, 1.0f,
+    // Cara trasera
+    -0.5f, -0.5f, -0.5f,  0.83f, 0.70f, 0.44f,  1.0f, 0.0f,
+     0.5f, -0.5f, -0.5f,  0.83f, 0.70f, 0.44f,  0.0f, 0.0f,
+     0.5f,  0.5f, -0.5f,  0.83f, 0.70f, 0.44f,  0.0f, 1.0f,
+    -0.5f,  0.5f, -0.5f,  0.83f, 0.70f, 0.44f,  1.0f, 1.0f
 };
-// Indices for vertices order
-GLuint indices[] =
-{
+
+GLuint indices[] = {
+    // Cara frontal
     0, 1, 2,
-    0, 2, 3,
-    0, 1, 4,
-    1, 2, 4,
-    2, 3, 4,
-    3, 0, 4
+    2, 3, 0,
+    // Cara trasera
+    4, 5, 6,
+    6, 7, 4,
+    // Cara izquierda
+    4, 0, 3,
+    3, 7, 4,
+    // Cara derecha
+    1, 5, 6,
+    6, 2, 1,
+    // Cara superior
+    3, 2, 6,
+    6, 7, 3,
+    // Cara inferior
+    4, 5, 1,
+    1, 0, 4
 };
 
 int main()
@@ -50,13 +65,13 @@ int main()
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
     // Create a GLFWwindow object of 800 by 800 pixels
     GLFWwindow* window = glfwCreateWindow(width, height, "Incorporando la funcionalidad de la Camara en OpenGL", NULL, NULL);
-        // Error check if the window fails to create
-        if (window == NULL)
-        {
-            std::cout << "Failed to create GLFW window" << std::endl;
-            glfwTerminate();
-            return -1;
-        }
+    // Error check if the window fails to create
+    if (window == NULL)
+    {
+        std::cout << "Failed to create GLFW window" << std::endl;
+        glfwTerminate();
+        return -1;
+    }
     // Introduce the window into the current context
     glfwMakeContextCurrent(window);
     //Load GLAD so it configures OpenGL
@@ -151,19 +166,19 @@ int main()
             //int projLoc = glGetUniformLocation(shaderProgram.ID, "proj");
             //glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(proj));
             // Assigns a value to the uniform
-            shaderProgram.Activate();
-            //Assigns a value to the uniform
-            //glUniform1f(uniID, 0.5f);
-            glBindTexture(GL_TEXTURE_2D, texture);
-            // Bind the VAO so OpenGL knows to use it
-            VAO1.Bind();
-            // Draw primitives, number of indices, datatype of indices, index of indices
-                glDrawElements(GL_TRIANGLES, sizeof(indices) / sizeof(int), GL_UNSIGNED_INT, 
-                    0);
-            // Swap the back buffer with the front buffer
-            glfwSwapBuffers(window);
-            // Take care of all GLFW events
-            glfwPollEvents();
+        shaderProgram.Activate();
+        //Assigns a value to the uniform
+        //glUniform1f(uniID, 0.5f);
+        glBindTexture(GL_TEXTURE_2D, texture);
+        // Bind the VAO so OpenGL knows to use it
+        VAO1.Bind();
+        // Draw primitives, number of indices, datatype of indices, index of indices
+        glDrawElements(GL_TRIANGLES, sizeof(indices) / sizeof(int), GL_UNSIGNED_INT,
+            0);
+        // Swap the back buffer with the front buffer
+        glfwSwapBuffers(window);
+        // Take care of all GLFW events
+        glfwPollEvents();
     }
     // Delete all the objects we've created
     VAO1.Delete();
