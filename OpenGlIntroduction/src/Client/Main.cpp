@@ -12,7 +12,7 @@
 #include"VBO.h"
 #include"EBO.h"
 #include"Camera.h"
-#include"Arrays.h"
+#include"Array.h"
 #include<Window.h>
 
 const unsigned int width = 800, height = 800;

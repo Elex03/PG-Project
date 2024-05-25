@@ -114,7 +114,7 @@
       <PreprocessorDefinitions>GLEW_STATIC;WIN32;</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)$(ProjectName)\src\Engine\Window\;$(SolutionDir)$(ProjectName)\src\Client\;C:\Users\Win10User\source\repos\PG-Proyect\OpenGlIntroduction\src\Engine\libraries;$(SolutionDir)$(ProjectName)\src\Engine\resources\Textures;$(SolutionDir)$(ProjectName);C:\Users\Win10User\source\repos\PG-Proyect\OpenGlIntroduction\src\Engine\resources\Shaders;C:\Users\Win10User\source\repos\PG-Proyect\OpenGlIntroduction\src\Engine\headers;$(SolutionDir)dependencies\include\;C:\Users\Win10User\source\repos\PG-Project\OpenGlIntroduction\src\Engine\headers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)$(ProjectName)\src\Engine\Window\;$(SolutionDir)$(ProjectName)\src\Client\;C:\Users\Win10User\source\repos\PG-Proyect\OpenGlIntroduction\src\Engine\libraries;$(SolutionDir)$(ProjectName)\src\Engine\resources\Textures;$(SolutionDir)$(ProjectName);C:\Users\Win10User\source\repos\PG-Proyect\OpenGlIntroduction\src\Engine\resources\Shaders;C:\Users\Win10User\source\repos\PG-Proyect\OpenGlIntroduction\src\Engine\headers;$(SolutionDir)dependencies\include\;C:\Users\Win10User\source\repos\PG-Project\OpenGlIntroduction\src\Engine\headers;C:\Users\Win10User\source\repos\PG-Project\OpenGlIntroduction\src\Engine\Window;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -131,7 +131,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>GLEW_STATIC;WIN32;</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)$(ProjectName)\src\Engine\Window\;$(SolutionDir)$(ProjectName)\src\Client\;C:\Users\Win10User\source\repos\PG-Proyect\OpenGlIntroduction\src\Engine\libraries;$(SolutionDir)$(ProjectName)\src\Engine\resources\Textures;$(SolutionDir)$(ProjectName);C:\Users\Win10User\source\repos\PG-Proyect\OpenGlIntroduction\src\Engine\resources\Shaders;C:\Users\Win10User\source\repos\PG-Proyect\OpenGlIntroduction\src\Engine\headers;$(SolutionDir)dependencies\include\;C:\Users\Win10User\source\repos\PG-Project\OpenGlIntroduction\src\Engine\headers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)$(ProjectName)\src\Engine\Window\;$(SolutionDir)$(ProjectName)\src\Client\;C:\Users\Win10User\source\repos\PG-Proyect\OpenGlIntroduction\src\Engine\libraries;$(SolutionDir)$(ProjectName)\src\Engine\resources\Textures;$(SolutionDir)$(ProjectName);C:\Users\Win10User\source\repos\PG-Proyect\OpenGlIntroduction\src\Engine\resources\Shaders;C:\Users\Win10User\source\repos\PG-Proyect\OpenGlIntroduction\src\Engine\headers;$(SolutionDir)dependencies\include\;C:\Users\Win10User\source\repos\PG-Project\OpenGlIntroduction\src\Engine\headers;C:\Users\Win10User\source\repos\PG-Project\OpenGlIntroduction\src\Engine\Window;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -147,15 +147,16 @@
     <ClCompile Include="src\Engine\libraries\Camera.cpp" />
     <ClCompile Include="src\Engine\libraries\EBO.cpp" />
     <ClCompile Include="src\Engine\libraries\Functions.cpp" />
-    <ClCompile Include="src\Engine\libraries\glad.cpp" />
+    <ClCompile Include="ext\glad.cpp" />
     <ClCompile Include="src\Engine\libraries\shaderClass.cpp" />
-    <ClCompile Include="src\Engine\libraries\stb.cpp" />
+    <ClCompile Include="ext\stb.cpp" />
     <ClCompile Include="src\Engine\libraries\Texture.cpp" />
     <ClCompile Include="src\Engine\libraries\VAO.cpp" />
     <ClCompile Include="src\Engine\libraries\VBO.cpp" />
     <ClCompile Include="src\Engine\Window\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Client\Array.h" />
     <ClInclude Include="src\Engine\headers\Camera.h" />
     <ClInclude Include="src\Engine\headers\EBO.h" />
     <ClInclude Include="src\Engine\headers\shaderClass.h" />
@@ -166,8 +167,8 @@
     <ClInclude Include="src\Engine\Window\Window.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="default.frag" />
-    <None Include="default.vert" />
+    <None Include="src\Engine\resources\Shaders\default.frag" />
+    <None Include="src\Engine\resources\Shaders\default.vert" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="src\Engine\resources\Textures\box.jpg" />
