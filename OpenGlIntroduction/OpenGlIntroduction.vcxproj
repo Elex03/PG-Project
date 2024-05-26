@@ -24,7 +24,7 @@
     <ProjectGuid>{35fd2e29-c5c5-423c-9884-e98853eb728e}</ProjectGuid>
     <RootNamespace>OpenGlIntroduction</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>PG-Proyect</ProjectName>
+    <ProjectName>PG-Project</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

@@ -1,5 +1,4 @@
 #include<iostream>
-#define GLM_ENABLE_EXPERIMENTAL
 #include<glad/glad.h>
 #include<GLFW/glfw3.h>
 #include<stb/stb_image.h>
@@ -17,6 +16,9 @@
 
 const unsigned int width = 800, height = 800;
 
+void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
+    glViewport(0, 0, width, height);
+}
 int main()
 {
     Window window(width, height, "Pantalla");
@@ -52,7 +54,11 @@ int main()
     shaderProgram.Activate();
     glUniform1i(tex0Uni, 0);
     glEnable(GL_DEPTH_TEST);
-    Camera camera(width, height, glm::vec3(0.0f, 0.0f, 2.0f));
+    int width1, height1;
+    glfwSetFramebufferSizeCallback(window.getWindow(), framebuffer_size_callback);
+
+    glfwGetWindowSize(window.getWindow(), &width1, &height1);
+    Camera camera(width1, height1, glm::vec3(0.0f, 0.0f, 2.0f));
     while (!glfwWindowShouldClose(window.getWindow()))
     {
         // Specify the color of the background
@@ -68,8 +74,7 @@ int main()
         // Bind the VAO so OpenGL knows to use it
         VAO1.Bind();
         // Draw primitives, number of indices, datatype of indices, index of indices
-        glDrawElements(GL_TRIANGLES, sizeof(indices) / sizeof(int), GL_UNSIGNED_INT,
-            0);
+        glDrawElements(GL_TRIANGLES, sizeof(indices) / sizeof(int), GL_UNSIGNED_INT, 0);
         // Swap the back buffer with the front buffer
         glfwSwapBuffers(window.getWindow());
         // Take care of all GLFW events
