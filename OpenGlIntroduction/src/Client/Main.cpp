@@ -19,6 +19,7 @@ const unsigned int width = 800, height = 800;
 
 int main()
 {
+    std::cout << "Hola mundo" << std::endl;
     Window window(width, height, "Pantalla");
     gladLoadGL();
     glViewport(0, 0, width, height);
