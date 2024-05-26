@@ -21,7 +21,11 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
 }
 int main()
 {
+<<<<<<< HEAD
     std::cout << "halley" << std::endl;
+=======
+    std::cout << "Hola mundo" << std::endl;
+>>>>>>> heature/Example
     Window window(width, height, "Pantalla");
     gladLoadGL();
     glViewport(0, 0, width, height);
