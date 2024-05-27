@@ -173,9 +173,9 @@
   <ItemGroup>
     <None Include="src\Engine\resources\Shaders\default.frag" />
     <None Include="src\Engine\resources\Shaders\default.vert" />
-    <None Include="src\Engine\Sound\ikpFlac.dll" />
-    <None Include="src\Engine\Sound\ikpMP3.dll" />
-    <None Include="src\Engine\Sound\irrKlang.dll" />
+    <None Include="src\Engine\Sound\libs\ikpFlac.dll" />
+    <None Include="src\Engine\Sound\libs\ikpMP3.dll" />
+    <None Include="src\Engine\Sound\libs\irrKlang.dll" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="src\Engine\resources\Textures\box.jpg" />

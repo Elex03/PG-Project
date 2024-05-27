@@ -1,5 +1,5 @@
 #include<iostream>
-#include<irrKlang.h>
+#include<irrKlang/irrKlang.h>
 
 
 int main()
