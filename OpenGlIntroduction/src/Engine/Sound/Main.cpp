@@ -22,7 +22,7 @@ int main(int argc, const char** argv)
         std::cout << "Press any key to play some sound, press 'q' to quit.\n";
 
         // play a single sound
-        engine->play2D("../../media/bell.wav");
+        engine->play2D("test1.wav");
 
         std::cin >> i; // wait for user to press some key
     }

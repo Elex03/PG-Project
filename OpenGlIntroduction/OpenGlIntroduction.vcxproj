@@ -173,14 +173,17 @@
   <ItemGroup>
     <None Include="src\Engine\resources\Shaders\default.frag" />
     <None Include="src\Engine\resources\Shaders\default.vert" />
-    <None Include="src\Engine\Sound\ikpFlac.dll" />
-    <None Include="src\Engine\Sound\ikpMP3.dll" />
+    <None Include="ikpFlac.dll" />
+    <None Include="ikpMP3.dll" />
     <None Include="irrKlang.dll" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="src\Engine\resources\Textures\box.jpg" />
     <Image Include="src\Engine\resources\Textures\Dog.png" />
     <Image Include="src\Engine\resources\Textures\dymond.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="test1.wav" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
