@@ -1,29 +1,75 @@
 #include<iostream>
 #include<irrKlang/irrKlang.h>
+#include<GLFW/glfw3.h>
 
 using namespace irrklang;
 #pragma comment(lib, "irrKlang.lib") // link with irrKlang.dll
-int main(int argc, const char** argv)
+
+// Inicializa IrrKlang
+ISoundEngine* engine = createIrrKlangDevice();
+
+void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
 {
-    // start the sound engine with default parameters
-    ISoundEngine* engine = createIrrKlangDevice();
-
-    if (!engine)
-        return 0; // error starting up the engine
-    // play some sound stream, looped
-
-    engine->play2D("../../media/getout.ogg", true);
-    std::cout << "\nHello World!\n";
-
-    char i = 0;
-
-    while (i != 'q')
+    // Verifica si la tecla 'E' fue presionada
+    if (key == GLFW_KEY_E && action == GLFW_PRESS)
     {
-        std::cout << "Press any key to play some sound, press 'q' to quit.\n";
-
-        // play a single sound
-        engine->play2D("test1.wav");
-
-        std::cin >> i; // wait for user to press some key
+        // Reproduce el sonido
+        if (engine)
+        {
+            engine->play2D("test1.wav", false);
+        }
     }
 }
+
+int main()
+{
+    // Inicializa GLFW
+    if (!glfwInit())
+    {
+        std::cerr << "Failed to initialize GLFW" << std::endl;
+        return -1;
+    }
+
+    // Crea una ventana
+    GLFWwindow* window = glfwCreateWindow(800, 600, "Mi primer sonido con teclado", nullptr, nullptr);
+    if (!window)
+    {
+        std::cerr << "Failed to create GLFW window" << std::endl;
+        glfwTerminate();
+        return -1;
+    }
+
+    // Hace que el contexto de OpenGL sea actual
+    glfwMakeContextCurrent(window);
+
+    // Configura el callback de teclado
+    glfwSetKeyCallback(window, key_callback);
+
+    // Bucle principal
+    while (!glfwWindowShouldClose(window))
+    {
+        // Renderiza aquí
+
+        // Intercambia los buffers de pantalla
+        glfwSwapBuffers(window);
+
+        // Procesa eventos
+        glfwPollEvents();
+    }
+
+    // Limpieza
+    glfwDestroyWindow(window);
+    glfwTerminate();
+
+    // Detiene el motor de sonido
+    if (engine)
+    {
+        engine->drop();
+    }
+
+    return 0;
+}
+
+
+
+
