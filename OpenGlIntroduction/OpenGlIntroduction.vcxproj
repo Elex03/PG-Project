@@ -143,26 +143,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\Client\Main.cpp" />
-    <ClCompile Include="src\Engine\libraries\Camera.cpp" />
-    <ClCompile Include="src\Engine\libraries\EBO.cpp" />
-    <ClCompile Include="src\Engine\libraries\Functions.cpp" />
     <ClCompile Include="ext\glad.cpp" />
-    <ClCompile Include="src\Engine\libraries\shaderClass.cpp" />
     <ClCompile Include="ext\stb.cpp" />
-    <ClCompile Include="src\Engine\libraries\Texture.cpp" />
-    <ClCompile Include="src\Engine\libraries\VAO.cpp" />
-    <ClCompile Include="src\Engine\libraries\VBO.cpp" />
+    <ClCompile Include="src\Engine\Texture\Main.cpp" />
     <ClCompile Include="src\Engine\Window\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Client\Array.h" />
-    <ClInclude Include="src\Engine\headers\Camera.h" />
-    <ClInclude Include="src\Engine\headers\EBO.h" />
-    <ClInclude Include="src\Engine\headers\shaderClass.h" />
-    <ClInclude Include="src\Engine\headers\Texture.h" />
-    <ClInclude Include="src\Engine\headers\VAO.h" />
-    <ClInclude Include="src\Engine\headers\VBO.h" />
     <ClInclude Include="src\Engine\Shaders\Shader.h" />
     <ClInclude Include="src\Engine\Window\Window.h" />
   </ItemGroup>
