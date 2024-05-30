@@ -24,34 +24,43 @@
     <ClCompile Include="src\Engine\Window\Window.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="src\Engine\libraries\Camera.cpp">
+    <ClCompile Include="ext\glad.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="src\Engine\libraries\EBO.cpp">
+    <ClCompile Include="ext\stb.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="src\Engine\libraries\Functions.cpp">
+    <ClCompile Include="src\Engine\Models\Camera.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="src\Engine\libraries\shaderClass.cpp">
+    <ClCompile Include="src\Engine\Models\EBO.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="src\Engine\libraries\stb.cpp">
+    <ClCompile Include="src\Engine\Models\Main.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="src\Engine\libraries\VAO.cpp">
+    <ClCompile Include="src\Engine\Models\Mesh.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="src\Engine\libraries\Texture.cpp">
+    <ClCompile Include="src\Engine\Models\Model.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="src\Engine\libraries\VBO.cpp">
+    <ClCompile Include="src\Engine\Models\shaderClass.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="src\Client\Main.cpp">
+    <ClCompile Include="src\Engine\Models\stb.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="src\Engine\libraries\glad.cpp">
+    <ClCompile Include="src\Engine\Models\VAO.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine\Models\Texture.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine\Models\VBO.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine\Models\glad.c">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>
@@ -62,28 +71,42 @@
     <ClInclude Include="src\Engine\Shaders\Shader.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="src\Engine\headers\Camera.h">
+    <ClInclude Include="src\Engine\Models\Camera.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="src\Engine\headers\EBO.h">
+    <ClInclude Include="src\Engine\Models\EBO.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="src\Engine\headers\shaderClass.h">
+    <ClInclude Include="src\Engine\Models\Mesh.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="src\Engine\headers\Texture.h">
+    <ClInclude Include="src\Engine\Models\Model.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="src\Engine\headers\VAO.h">
+    <ClInclude Include="src\Engine\Models\shaderClass.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="src\Engine\headers\VBO.h">
+    <ClInclude Include="src\Engine\Models\Texture.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engine\Models\VAO.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engine\Models\VBO.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="default.frag" />
-    <None Include="default.vert" />
+    <None Include="src\Engine\Models\default.frag" />
+    <None Include="src\Engine\Models\default.vert" />
+    <None Include="src\Engine\resources\Models\bunny\scene.bin">
+      <Filter>Archivos de recursos</Filter>
+    </None>
+    <None Include="src\Engine\resources\Models\bunny\scene.gltf" />
+    <None Include="src\Engine\resources\Models\grindstone\scene.bin">
+      <Filter>Archivos de recursos</Filter>
+    </None>
+    <None Include="src\Engine\resources\Models\grindstone\scene.gltf" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="src\Engine\resources\Textures\box.jpg">
@@ -93,6 +116,12 @@
       <Filter>Archivos de recursos</Filter>
     </Image>
     <Image Include="src\Engine\resources\Textures\Dog.png">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
+    <Image Include="src\Engine\resources\Models\bunny\baseColor.png">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
+    <Image Include="src\Engine\resources\Models\bunny\metallicRoughness.png">
       <Filter>Archivos de recursos</Filter>
     </Image>
   </ItemGroup>

@@ -143,34 +143,44 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\Client\Main.cpp" />
-    <ClCompile Include="src\Engine\libraries\Camera.cpp" />
-    <ClCompile Include="src\Engine\libraries\EBO.cpp" />
-    <ClCompile Include="src\Engine\libraries\Functions.cpp" />
     <ClCompile Include="ext\glad.cpp" />
-    <ClCompile Include="src\Engine\libraries\shaderClass.cpp" />
     <ClCompile Include="ext\stb.cpp" />
-    <ClCompile Include="src\Engine\libraries\Texture.cpp" />
-    <ClCompile Include="src\Engine\libraries\VAO.cpp" />
-    <ClCompile Include="src\Engine\libraries\VBO.cpp" />
+    <ClCompile Include="src\Engine\Models\Camera.cpp" />
+    <ClCompile Include="src\Engine\Models\EBO.cpp" />
+    <ClCompile Include="src\Engine\Models\glad.c" />
+    <ClCompile Include="src\Engine\Models\Main.cpp" />
+    <ClCompile Include="src\Engine\Models\Mesh.cpp" />
+    <ClCompile Include="src\Engine\Models\Model.cpp" />
+    <ClCompile Include="src\Engine\Models\shaderClass.cpp" />
+    <ClCompile Include="src\Engine\Models\stb.cpp" />
+    <ClCompile Include="src\Engine\Models\Texture.cpp" />
+    <ClCompile Include="src\Engine\Models\VAO.cpp" />
+    <ClCompile Include="src\Engine\Models\VBO.cpp" />
     <ClCompile Include="src\Engine\Window\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Client\Array.h" />
-    <ClInclude Include="src\Engine\headers\Camera.h" />
-    <ClInclude Include="src\Engine\headers\EBO.h" />
-    <ClInclude Include="src\Engine\headers\shaderClass.h" />
-    <ClInclude Include="src\Engine\headers\Texture.h" />
-    <ClInclude Include="src\Engine\headers\VAO.h" />
-    <ClInclude Include="src\Engine\headers\VBO.h" />
+    <ClInclude Include="src\Engine\Models\Camera.h" />
+    <ClInclude Include="src\Engine\Models\EBO.h" />
+    <ClInclude Include="src\Engine\Models\Mesh.h" />
+    <ClInclude Include="src\Engine\Models\Model.h" />
+    <ClInclude Include="src\Engine\Models\shaderClass.h" />
+    <ClInclude Include="src\Engine\Models\Texture.h" />
+    <ClInclude Include="src\Engine\Models\VAO.h" />
+    <ClInclude Include="src\Engine\Models\VBO.h" />
     <ClInclude Include="src\Engine\Shaders\Shader.h" />
     <ClInclude Include="src\Engine\Window\Window.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="src\Engine\resources\Shaders\default.frag" />
-    <None Include="src\Engine\resources\Shaders\default.vert" />
+    <None Include="src\Engine\Models\default.frag" />
+    <None Include="src\Engine\Models\default.vert" />
+    <None Include="src\Engine\resources\Models\bunny\scene.bin" />
+    <None Include="src\Engine\resources\Models\bunny\scene.gltf" />
+    <None Include="src\Engine\resources\Models\grindstone\scene.bin" />
+    <None Include="src\Engine\resources\Models\grindstone\scene.gltf" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="src\Engine\resources\Models\bunny\baseColor.png" />
+    <Image Include="src\Engine\resources\Models\bunny\metallicRoughness.png" />
     <Image Include="src\Engine\resources\Textures\box.jpg" />
     <Image Include="src\Engine\resources\Textures\Dog.png" />
     <Image Include="src\Engine\resources\Textures\dymond.png" />
