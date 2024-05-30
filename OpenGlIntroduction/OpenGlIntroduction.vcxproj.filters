@@ -36,7 +36,7 @@
     <ClCompile Include="src\Engine\Models\EBO.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="src\Engine\Models\Main.cpp">
+    <ClCompile Include="src\Engine\Models\Main.model.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
     <ClCompile Include="src\Engine\Models\Mesh.cpp">

@@ -148,7 +148,7 @@
     <ClCompile Include="src\Engine\Models\Camera.cpp" />
     <ClCompile Include="src\Engine\Models\EBO.cpp" />
     <ClCompile Include="src\Engine\Models\glad.c" />
-    <ClCompile Include="src\Engine\Models\Main.cpp" />
+    <ClCompile Include="src\Engine\Models\Main.model.cpp" />
     <ClCompile Include="src\Engine\Models\Mesh.cpp" />
     <ClCompile Include="src\Engine\Models\Model.cpp" />
     <ClCompile Include="src\Engine\Models\shaderClass.cpp" />
