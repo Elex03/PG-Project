@@ -11,7 +11,7 @@ Window::Window(int width, int height, const char* title) {
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
 	//Establecemos el nombre que deseamos aparezca en pantalla
-	m_window = glfwCreateWindow(800, 800, "Primitivas Graficas", NULL, NULL);
+	m_window = glfwCreateWindow(width, height, title, NULL, NULL);
 
 	//En caso que la ventana no se pueda crear entonces enviamos un error.
 	if (m_window == NULL) {
