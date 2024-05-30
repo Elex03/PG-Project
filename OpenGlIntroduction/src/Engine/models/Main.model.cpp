@@ -75,7 +75,7 @@ void render() {
     gluLookAt(cameraX, cameraY, cameraZ, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
 
     // Rotar el objeto alrededor del eje Y
-    glRotatef(rotationAngle, 1.0, 1.0, 0.0);
+    glRotatef(rotationAngle, 0.0, 1.0, 0.0);
 
     // Renderizar cada malla del modelo
     for (const auto& mesh : meshes) {
