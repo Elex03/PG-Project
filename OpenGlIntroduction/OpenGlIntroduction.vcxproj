@@ -24,7 +24,7 @@
     <ProjectGuid>{35fd2e29-c5c5-423c-9884-e98853eb728e}</ProjectGuid>
     <RootNamespace>OpenGlIntroduction</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>PG-Proyect</ProjectName>
+    <ProjectName>PG-Project</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -120,7 +120,7 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)dependencies\libs\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>freeglut.lib;SDL2.lib;SDL2main.lib;glfw3.lib;opengl32.lib;glew32s.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>assimp-vc143-mt.lib;freeglut.lib;SDL2.lib;SDL2main.lib;glfw3.lib;opengl32.lib;glew32s.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -138,52 +138,43 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>freeglut.lib;SDL2.lib;SDL2main.lib;glfw3.lib;opengl32.lib;glew32s.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>assimp-vc143-mt.lib;freeglut.lib;SDL2.lib;SDL2main.lib;glfw3.lib;opengl32.lib;glew32s.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)dependencies\libs\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ext\glad.cpp" />
     <ClCompile Include="ext\stb.cpp" />
-    <ClCompile Include="src\Engine\Models\Camera.cpp" />
-    <ClCompile Include="src\Engine\Models\EBO.cpp" />
-    <ClCompile Include="src\Engine\Models\glad.c" />
     <ClCompile Include="src\Engine\Models\Main.model.cpp" />
-    <ClCompile Include="src\Engine\Models\Mesh.cpp" />
-    <ClCompile Include="src\Engine\Models\Model.cpp" />
-    <ClCompile Include="src\Engine\Models\shaderClass.cpp" />
-    <ClCompile Include="src\Engine\Models\stb.cpp" />
-    <ClCompile Include="src\Engine\Models\Texture.cpp" />
-    <ClCompile Include="src\Engine\Models\VAO.cpp" />
-    <ClCompile Include="src\Engine\Models\VBO.cpp" />
     <ClCompile Include="src\Engine\Window\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Engine\Models\Camera.h" />
-    <ClInclude Include="src\Engine\Models\EBO.h" />
-    <ClInclude Include="src\Engine\Models\Mesh.h" />
-    <ClInclude Include="src\Engine\Models\Model.h" />
-    <ClInclude Include="src\Engine\Models\shaderClass.h" />
-    <ClInclude Include="src\Engine\Models\Texture.h" />
-    <ClInclude Include="src\Engine\Models\VAO.h" />
-    <ClInclude Include="src\Engine\Models\VBO.h" />
     <ClInclude Include="src\Engine\Shaders\Shader.h" />
     <ClInclude Include="src\Engine\Window\Window.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="src\Engine\Models\default.frag" />
-    <None Include="src\Engine\Models\default.vert" />
+    <None Include="Container.3DS" />
+    <None Include="Container.FBX" />
+    <None Include="Container.max" />
+    <None Include="Container.mtl" />
+    <None Include="Container_Max2017.max" />
+    <None Include="src\Engine\models\scene.bin" />
+    <None Include="src\Engine\models\scene.gltf" />
     <None Include="src\Engine\resources\Models\bunny\scene.bin" />
     <None Include="src\Engine\resources\Models\bunny\scene.gltf" />
     <None Include="src\Engine\resources\Models\grindstone\scene.bin" />
     <None Include="src\Engine\resources\Models\grindstone\scene.gltf" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="Kontajner_001_bumped_Normal_Bump.tga" />
     <Image Include="src\Engine\resources\Models\bunny\baseColor.png" />
     <Image Include="src\Engine\resources\Models\bunny\metallicRoughness.png" />
     <Image Include="src\Engine\resources\Textures\box.jpg" />
     <Image Include="src\Engine\resources\Textures\Dog.png" />
     <Image Include="src\Engine\resources\Textures\dymond.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="src\Engine\models\license.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

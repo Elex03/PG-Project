@@ -1,79 +1,127 @@
-//------- Ignore this ----------
-#include<filesystem>
-namespace fs = std::filesystem;
-//------------------------------
+#include <iostream>
+#include <vector>
+#include <GL/glut.h>
+#include <assimp/Importer.hpp>
+#include <assimp/scene.h>
+#include <assimp/postprocess.h>
 
-#include"Model.h"
-#include <Window.h>
+GLfloat cameraX = 10.0;
+GLfloat cameraY = 40.0;
+GLfloat cameraZ = 10.0;
 
-const unsigned int width = 800;
-const unsigned int height = 800;
+// Estructura para almacenar datos del modelo
+struct Mesh {
+    std::vector<GLfloat> vertices;
+    std::vector<GLuint> indices;
+};
 
+std::vector<Mesh> meshes;
 
-int main()
-{
-    Window window(600, 800, "Pantalla");
-    // Load GLAD so it configures OpenGL
-    gladLoadGL();
-    // Specify the viewport of OpenGL in the Window
-    // In this case the viewport goes from x = 0, y = 0, to x = 800, y = 800
-    glViewport(0, 0, width, height);
+// Variable para controlar la rotación del objeto
+GLfloat rotationAngle = 0.0;
 
-    // Generates Shader object using shaders default.vert and default.frag
-    Shader shaderProgram("src/Engine/Models/default.vert", "src/Engine/Models/default.frag");
+// Función para cargar un modelo OBJ utilizando Assimp
+void loadOBJ(const std::string& filePath) {
+    Assimp::Importer importer;
+    const aiScene* scene = importer.ReadFile(filePath, aiProcess_Triangulate | aiProcess_FlipUVs);
 
-    // Take care of all the light related things
-    glm::vec4 lightColor = glm::vec4(1.0f, 1.0f, 1.0f, 1.0f);
-    glm::vec3 lightPos = glm::vec3(0.5f, 0.5f, 0.5f);
-    glm::mat4 lightModel = glm::mat4(1.0f);
-    lightModel = glm::translate(lightModel, lightPos);
-
-    shaderProgram.Activate();
-    glUniform4f(glGetUniformLocation(shaderProgram.ID, "lightColor"), lightColor.x, lightColor.y, lightColor.z, lightColor.w);
-    glUniform3f(glGetUniformLocation(shaderProgram.ID, "lightPos"), lightPos.x, lightPos.y, lightPos.z);
-
-    // Enables the Depth Buffer
-    glEnable(GL_DEPTH_TEST);
-
-    // Creates camera object
-    Camera camera(width, height, glm::vec3(0.0f, 0.0f, 2.0f));
-
-    std::string parentDir = (fs::current_path().fs::path::parent_path()).string();
-    std::string modelPath = "/OpenGlIntroduction/src/Engine/resources/Models/grindstone/scene.gltf";
-
-    // Load in a model
-    Model model((parentDir + modelPath).c_str());
-
-    // Original code from the tutorial
-    // Model model("models/bunny/scene.gltf");
-
-    // Main while loop
-    while (!glfwWindowShouldClose(window.getWindow()))
-    {
-        // Specify the color of the background
-        glClearColor(0.07f, 0.13f, 0.17f, 1.0f);
-        // Clean the back buffer and depth buffer
-        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
-        // Handles camera inputs
-        camera.Inputs(window.getWindow());
-        // Updates and exports the camera matrix to the Vertex Shader
-        camera.updateMatrix(45.0f, 0.1f, 600.0f);
-
-        // Draw a model
-        model.Draw(shaderProgram, camera);
-
-        // Swap the back buffer with the front buffer
-        glfwSwapBuffers(window.getWindow());
-        // Take care of all GLFW events
-        glfwPollEvents();
+    if (!scene || scene->mFlags & AI_SCENE_FLAGS_INCOMPLETE || !scene->mRootNode) {
+        std::cerr << "Error al cargar el modelo: " << importer.GetErrorString() << std::endl;
+        return;
     }
 
-    // Delete all the objects we've created
-    shaderProgram.Delete();
-    // Delete window before ending the program
-    glfwDestroyWindow(window.getWindow());
-    // Terminate GLFW before ending the program
-    glfwTerminate();
+    // Recorrer todos los nodos de la escena y extraer los datos del modelo
+    for (unsigned int i = 0; i < scene->mNumMeshes; ++i) {
+        Mesh mesh;
+        const aiMesh* aiMesh = scene->mMeshes[i];
+
+        for (unsigned int j = 0; j < aiMesh->mNumVertices; ++j) {
+            mesh.vertices.push_back(aiMesh->mVertices[j].x);
+            mesh.vertices.push_back(aiMesh->mVertices[j].y);
+            mesh.vertices.push_back(aiMesh->mVertices[j].z);
+        }
+
+        for (unsigned int j = 0; j < aiMesh->mNumFaces; ++j) {
+            const aiFace& face = aiMesh->mFaces[j];
+            for (unsigned int k = 0; k < face.mNumIndices; ++k) {
+                mesh.indices.push_back(face.mIndices[k]);
+            }
+        }
+
+        meshes.push_back(mesh);
+    }
+}
+
+// Función de inicialización de OpenGL
+void init() {
+    glEnable(GL_DEPTH_TEST);
+    glEnable(GL_LIGHTING);
+    glEnable(GL_LIGHT0);
+
+    glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+
+    // Cargar modelo OBJ
+    loadOBJ("12328_Statue_v1_L2.obj");
+}
+
+// Función de renderizado
+void render() {
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    glClearColor(1.f, 1.f, 1.f, 1.f);
+    // Configurar la cámara
+    glMatrixMode(GL_MODELVIEW);
+    glLoadIdentity();
+    gluPerspective(45.0f, 1.0f, 0.1f, 100.0f);
+    gluLookAt(cameraX, cameraY, cameraZ, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
+
+    // Rotar el objeto alrededor del eje Y
+    glRotatef(rotationAngle, 1.0, 1.0, 0.0);
+
+    // Renderizar cada malla del modelo
+    for (const auto& mesh : meshes) {
+        glEnableClientState(GL_VERTEX_ARRAY);
+        glVertexPointer(3, GL_FLOAT, 0, mesh.vertices.data());
+
+        glDrawElements(GL_TRIANGLES, mesh.indices.size(), GL_UNSIGNED_INT, mesh.indices.data());
+
+        glDisableClientState(GL_VERTEX_ARRAY);
+    }
+
+    glutSwapBuffers();
+}
+// Función de manejo de movimiento del ratón
+void mouseMotion(int x, int y) {
+    // Rotar el objeto en función del movimiento del ratón
+    rotationAngle += (x - glutGet(GLUT_WINDOW_WIDTH) / 2) * 0.1;
+    glutPostRedisplay();
+}
+// Función de manejo de eventos del ratón para rotar la cámara al hacer clic y arrastrar
+void mouse(int button, int state, int x, int y) {
+    if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
+        // Guardar la posición inicial del clic
+        glutMotionFunc(mouseMotion);
+    }
+    else if (button == GLUT_LEFT_BUTTON && state == GLUT_UP) {
+        // Detener la rotación cuando se libera el clic
+        glutMotionFunc(nullptr);
+    }
+}
+
+int main(int argc, char** argv) {
+    glutInit(&argc, argv);
+    glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA | GLUT_DEPTH);
+    glutInitWindowSize(600, 600);
+    glutCreateWindow("OpenGL + Assimp + GLUT OBJ Loader");
+
+    init();
+
+    glutDisplayFunc(render);
+
+    // Registrar funciones de manejo de eventos del ratón
+    glutMouseFunc(mouse);
+    glutMotionFunc(nullptr);
+
+    glutMainLoop();
+
     return 0;
 }

@@ -1,0 +1,31 @@
+# 3ds Max Wavefront OBJ Exporter v0.97b - (c)2007 guruware
+# File Created: 20.12.2019 09:08:54
+
+newmtl Container
+	Ns 15.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka C:\Users\Jaroslav\Documents\TS_Models\Container\textures_container\Container_DiffuseMap.jpg
+	map_Kd C:\Users\Jaroslav\Documents\TS_Models\Container\textures_container\Container_DiffuseMap.jpg
+	map_bump -bm 0.3000 Kontajner_001_bumped_Normal_Bump.tga
+
+newmtl Klimatizacia
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.3600 0.3600 0.3600
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\Z D_ecka\3D Zalohy\Exteriors Models\Klimatizacia\textury\KlimatizaciaDiffuseMap.jpg
+	map_Kd G:\Z D_ecka\3D Zalohy\Exteriors Models\Klimatizacia\textury\KlimatizaciaDiffuseMap.jpg

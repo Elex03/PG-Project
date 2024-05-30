@@ -30,37 +30,7 @@
     <ClCompile Include="ext\stb.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="src\Engine\Models\Camera.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Engine\Models\EBO.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
     <ClCompile Include="src\Engine\Models\Main.model.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Engine\Models\Mesh.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Engine\Models\Model.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Engine\Models\shaderClass.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Engine\Models\stb.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Engine\Models\VAO.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Engine\Models\Texture.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Engine\Models\VBO.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Engine\Models\glad.c">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>
@@ -71,34 +41,8 @@
     <ClInclude Include="src\Engine\Shaders\Shader.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="src\Engine\Models\Camera.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Engine\Models\EBO.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Engine\Models\Mesh.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Engine\Models\Model.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Engine\Models\shaderClass.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Engine\Models\Texture.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Engine\Models\VAO.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Engine\Models\VBO.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="src\Engine\Models\default.frag" />
-    <None Include="src\Engine\Models\default.vert" />
     <None Include="src\Engine\resources\Models\bunny\scene.bin">
       <Filter>Archivos de recursos</Filter>
     </None>
@@ -107,6 +51,15 @@
       <Filter>Archivos de recursos</Filter>
     </None>
     <None Include="src\Engine\resources\Models\grindstone\scene.gltf" />
+    <None Include="src\Engine\models\scene.gltf" />
+    <None Include="src\Engine\models\scene.bin">
+      <Filter>Archivos de recursos</Filter>
+    </None>
+    <None Include="Container.3DS" />
+    <None Include="Container.FBX" />
+    <None Include="Container.max" />
+    <None Include="Container.mtl" />
+    <None Include="Container_Max2017.max" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="src\Engine\resources\Textures\box.jpg">
@@ -124,5 +77,9 @@
     <Image Include="src\Engine\resources\Models\bunny\metallicRoughness.png">
       <Filter>Archivos de recursos</Filter>
     </Image>
+    <Image Include="Kontajner_001_bumped_Normal_Bump.tga" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="src\Engine\models\license.txt" />
   </ItemGroup>
 </Project>
