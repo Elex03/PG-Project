@@ -7,7 +7,7 @@
 
 GLfloat cameraX = 10.0;
 GLfloat cameraY = 40.0;
-GLfloat cameraZ = 10.0;
+GLfloat cameraZ = 180.0;
 
 // Estructura para almacenar datos del modelo
 struct Mesh {
@@ -58,20 +58,20 @@ void init() {
     glEnable(GL_LIGHTING);
     glEnable(GL_LIGHT0);
 
-    glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+    glClearColor(0.99f, 0.87f, 0.56f, 1.0f);
 
     // Cargar modelo OBJ
-    loadOBJ("12328_Statue_v1_L2.obj");
+    loadOBJ("Container.obj");
 }
 
 // Función de renderizado
 void render() {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    glClearColor(1.f, 1.f, 1.f, 1.f);
+    glClearColor(0.34f, 0.89f, 0.57f, 1.f);
     // Configurar la cámara
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
-    gluPerspective(45.0f, 1.0f, 0.1f, 100.0f);
+    gluPerspective(45.0f, 1.0f, 0.1f, 1000.0f);
     gluLookAt(cameraX, cameraY, cameraZ, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
 
     // Rotar el objeto alrededor del eje Y
